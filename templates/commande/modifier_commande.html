@@ -1,0 +1,16 @@
+{% extends 'main.html'%}
+{%block contenu %}
+<div class='flex justify-center py-12 mt-5 relative'
+		style="background-color: #ff4332;">
+		<p class='text-xl sm:text-2xl font-bold text-white'>Modifier Commande</p>
+	</div>
+<form method="post" class="pt-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="flex items-center justify-center mt-5">
+        <button type="submit"
+            class="btn-m  w-full font-semibold  text-gray-400 hover:text-white duration-300 transform focus:text-white"
+            >Modifier</button></div>
+</form>
+{%endblock%}

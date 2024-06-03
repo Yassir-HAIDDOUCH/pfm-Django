@@ -1,0 +1,17 @@
+{% extends 'main.html'%}
+{%block contenu %}
+<div class='flex justify-center py-12 mt-5  relative'
+            style="background-color: #ff4332;">
+            <p class='text-xl sm:text-2xl font-bold text-white'>Ajouter
+                Livre</p>
+        </div>
+<form method="post" class="pt-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_div }}
+
+    <div class="flex items-center justify-center mt-5">
+        <button type="submit"
+            class="btn-j  w-full font-semibold  text-gray-400 hover:text-white duration-300 transform focus:text-white"
+            >Ajouter</button></div>
+</form>
+{%endblock%}

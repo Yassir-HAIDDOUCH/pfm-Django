@@ -1,0 +1,17 @@
+{% extends 'main.html'%}
+{%block contenu %}
+<div class='flex justify-center py-12 mt-5  relative'
+            style="background-color: #ff4332;">
+            <p class='text-xl sm:text-2xl font-bold text-white'>Supprimer
+                Clients</p>
+        </div>
+<form method="post" class="pt-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h3>Êtes-vous sûr de vouloir supprimer le client: "{{ client.nom }} {{ client.prenom }}" ?</h3><br />
+    
+    <button type="submit"
+    class="btn-s  px-5 font-semibold  text-gray-400 hover:text-white duration-300 transform focus:text-white"
+    >Supprimer</button>
+<a href="{% url 'home' %}" class="btn -mt-0.5 px-5 rounded-none font-semibold bg-gray-400 text-gray-200  duration-300 hover:bg-gray-300 transform focus:text-white"  class="btn">Annuler</a>
+</form>
+{%endblock%}
